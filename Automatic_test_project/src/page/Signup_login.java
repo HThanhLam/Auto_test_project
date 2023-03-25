@@ -9,7 +9,9 @@ public class Signup_login {
 	By txtUsername = By.xpath("//form[@action='/signup']/input[2]");
 	By txtEmail = By.xpath("//form[@action='/signup']/input[3]");
 	By btnSignup = By.cssSelector("div.signup-form button");
-	WebDriverWait Wait;
+	By signUpTile = By.cssSelector("div[class='signup-form'] h2");	WebDriverWait Wait;
+	By errorSignUpMessage = By.cssSelector(".signup-form p");
+
 	public Signup_login(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -19,4 +21,15 @@ public class Signup_login {
 		driver.findElement(txtEmail).sendKeys(email);
 		driver.findElement(btnSignup).click();
 	}
+	
+	public String getSignUpTitle()
+	{
+		return driver.findElement(signUpTile).getText();
+	}
+	
+	public String getErrorSignUpMessage()
+    {
+        return driver.findElement(errorSignUpMessage).getText();
+    }
+	
 }
