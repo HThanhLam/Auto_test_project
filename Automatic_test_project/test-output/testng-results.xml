@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-26T16:34:30 ICT" name="Default suite" finished-at="2023-03-26T16:34:49 ICT" duration-ms="18721">
+  <suite started-at="2023-03-26T22:49:23 ICT" name="Default suite" finished-at="2023-03-26T22:50:04 ICT" duration-ms="40462">
     <groups>
     </groups>
-    <test started-at="2023-03-26T16:34:30 ICT" name="Default test" finished-at="2023-03-26T16:34:49 ICT" duration-ms="18721">
-      <class name="test.LoginUserWithCorrectEmailAndPassword">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginUserWithCorrectEmailAndPassword@5552768b]" started-at="2023-03-26T16:34:30 ICT" name="beforeMethod" finished-at="2023-03-26T16:34:38 ICT" duration-ms="7276" status="PASS">
+    <test started-at="2023-03-26T22:49:23 ICT" name="Default test" finished-at="2023-03-26T22:50:04 ICT" duration-ms="40462">
+      <class name="test.ContactTest">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.ContactTest@5552768b]" started-at="2023-03-26T22:49:23 ICT" name="beforeMethod" finished-at="2023-03-26T22:49:50 ICT" duration-ms="27034" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TC2_loginUserSuccessful()[pri:0, instance:test.LoginUserWithCorrectEmailAndPassword@5552768b]" started-at="2023-03-26T16:34:38 ICT" name="TC2_loginUserSuccessful" finished-at="2023-03-26T16:34:49 ICT" duration-ms="11212" status="PASS">
+        <test-method signature="TC6_sendContact()[pri:0, instance:test.ContactTest@5552768b]" started-at="2023-03-26T22:49:50 ICT" name="TC6_sendContact" finished-at="2023-03-26T22:50:03 ICT" duration-ms="13186" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TC2_loginUserSuccessful -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginUserWithCorrectEmailAndPassword@5552768b]" started-at="2023-03-26T16:34:49 ICT" name="afterMethod" finished-at="2023-03-26T16:34:49 ICT" duration-ms="175" status="PASS">
+        </test-method> <!-- TC6_sendContact -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.ContactTest@5552768b]" started-at="2023-03-26T22:50:03 ICT" name="afterMethod" finished-at="2023-03-26T22:50:04 ICT" duration-ms="185" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- test.LoginUserWithCorrectEmailAndPassword -->
+      </class> <!-- test.ContactTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

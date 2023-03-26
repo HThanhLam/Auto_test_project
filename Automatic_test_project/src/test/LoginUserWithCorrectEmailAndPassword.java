@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -39,8 +40,11 @@ public class LoginUserWithCorrectEmailAndPassword {
 	
 	@BeforeMethod
 	public void beforeMethod() {
+		
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\resources\\chromedriver_110\\chromedriver.exe");
-        driver = new ChromeDriver();
+		ChromeOptions option = new ChromeOptions();
+        option.addArguments("--remote-allow-origins=*");
+        driver = new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.get("https://automationexercise.com/");
 	}
