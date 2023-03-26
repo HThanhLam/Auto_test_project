@@ -8,6 +8,7 @@ public class Homepage {
 	WebDriver driver;
 	By btnLogin = By.cssSelector(".fa.fa-lock");
 	By btnTestcases = By.cssSelector(".fa.fa-list");
+    By contactLink = By.xpath("//a[normalize-space()='Contact us']");
 
 	WebDriverWait Wait;
 	public Homepage(WebDriver driver) {
@@ -19,6 +20,15 @@ public class Homepage {
 	}
 	public void testcases() {
 		driver.findElement(btnTestcases).click();
+	}
+	
+	public ContactPage openContactPage() {
+       driver.findElement(contactLink).click();
+        return new ContactPage(driver);
+    }
+	public boolean verifyThatLandedToHomepage()
+	{
+		return driver.getCurrentUrl().equals("https://automationexercise.com/");
 	}
 
 }

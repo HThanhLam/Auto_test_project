@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-24T01:10:19 ICT" name="Default suite" finished-at="2023-03-24T01:11:07 ICT" duration-ms="47559">
+  <suite started-at="2023-03-26T16:34:30 ICT" name="Default suite" finished-at="2023-03-26T16:34:49 ICT" duration-ms="18721">
     <groups>
     </groups>
-    <test started-at="2023-03-24T01:10:19 ICT" name="Default test" finished-at="2023-03-24T01:11:07 ICT" duration-ms="47559">
-      <class name="test.test1">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.test1@76508ed1]" started-at="2023-03-24T01:10:19 ICT" name="beforeMethod" finished-at="2023-03-24T01:10:25 ICT" duration-ms="5316" status="PASS">
+    <test started-at="2023-03-26T16:34:30 ICT" name="Default test" finished-at="2023-03-26T16:34:49 ICT" duration-ms="18721">
+      <class name="test.LoginUserWithCorrectEmailAndPassword">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.LoginUserWithCorrectEmailAndPassword@5552768b]" started-at="2023-03-26T16:34:30 ICT" name="beforeMethod" finished-at="2023-03-26T16:34:38 ICT" duration-ms="7276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="TestLogin()[pri:1, instance:test.test1@76508ed1]" started-at="2023-03-24T01:10:25 ICT" name="TestLogin" finished-at="2023-03-24T01:11:01 ICT" duration-ms="36140" status="PASS">
+        <test-method signature="TC2_loginUserSuccessful()[pri:0, instance:test.LoginUserWithCorrectEmailAndPassword@5552768b]" started-at="2023-03-26T16:34:38 ICT" name="TC2_loginUserSuccessful" finished-at="2023-03-26T16:34:49 ICT" duration-ms="11212" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestLogin -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.test1@76508ed1]" started-at="2023-03-24T01:11:01 ICT" name="afterMethod" finished-at="2023-03-24T01:11:01 ICT" duration-ms="87" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:test.test1@76508ed1]" started-at="2023-03-24T01:11:01 ICT" name="beforeMethod" finished-at="2023-03-24T01:11:05 ICT" duration-ms="4276" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method signature="Testcases_Test()[pri:2, instance:test.test1@76508ed1]" started-at="2023-03-24T01:11:05 ICT" name="Testcases_Test" finished-at="2023-03-24T01:11:07 ICT" duration-ms="1631" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Testcases_Test -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.test1@76508ed1]" started-at="2023-03-24T01:11:07 ICT" name="afterMethod" finished-at="2023-03-24T01:11:07 ICT" duration-ms="76" status="PASS">
+        </test-method> <!-- TC2_loginUserSuccessful -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:test.LoginUserWithCorrectEmailAndPassword@5552768b]" started-at="2023-03-26T16:34:49 ICT" name="afterMethod" finished-at="2023-03-26T16:34:49 ICT" duration-ms="175" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- test.test1 -->
+      </class> <!-- test.LoginUserWithCorrectEmailAndPassword -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

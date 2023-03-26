@@ -79,6 +79,7 @@ public class Test1and7 {
 	
 	@BeforeMethod
 	public void beforeMethod() {
+		System.setProperty("webdriver.chrome.driver", "E:\\Learning\\Selenium\\Building\\chromedriver_110\\chromedriver.exe");
         ChromeOptions option = new ChromeOptions();
         option.addArguments("--remote-allow-origins=*");
         driver = new ChromeDriver(option);
