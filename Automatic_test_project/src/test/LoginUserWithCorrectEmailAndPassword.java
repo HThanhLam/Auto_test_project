@@ -4,32 +4,41 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
 import org.testng.Assert;
-import page.ContactPage;
-import page.Homepage;
+import org.testng.annotations.*;
 
-public class ContactTest {
+import page.*;
+
+public class LoginUserWithCorrectEmailAndPassword {
 	WebDriver driver;
 	Homepage homePage;
-    ContactPage contactPage;
-
-    @Test
-    public void TC6_sendContact() throws Exception {
+	Signup_login signup_login;
+	page.loggedin_Homepage loggedin_Homepage;
+	page.Account_deleted Account_deleted;
+	
+    String email = "maiphuong@gmail.com";
+    String password = "123456";
+	
+	
+	@Test
+    public void TC2_loginUserSuccessful() throws InterruptedException {
         homePage = new Homepage(driver);
-        contactPage = homePage.openContactPage();
-        Assert.assertEquals(contactPage.getTitlePage(),"GET IN TOUCH","Contact title should be GET IN TOUCH");
-        contactPage.sendContact("nhl","nhl@gmail.com","contact","content message");
-        Assert.assertTrue(contactPage.getSuccessStatus().contains("Success! Your details have been submitted successfully"));
-        contactPage.goToHomePage();
-        closeGoogleAd();
-        Thread.sleep(2000);
-        Assert.assertTrue(homePage.verifyThatLandedToHomepage(),"Not home page");
+        homePage.login();
+        signup_login = new Signup_login(driver);
+        Assert.assertEquals(signup_login.getSignInTitle().toLowerCase(),"login to your account","Tilte Sign Up");
+        signup_login.login(email,password);
+        String textcheck4= driver.findElement(By.cssSelector(".nav.navbar-nav li:nth-child(10) a")).getText();
+		Assert.assertTrue(textcheck4.contains("Logged in as"), "not show info");		
+		loggedin_Homepage = new page.loggedin_Homepage(driver);
+		loggedin_Homepage.deleteaccount();
+		closeGoogleAd();
+		String textcheck5= driver.findElement(By.xpath("//div/h2/b")).getText();
+		Assert.assertEquals(textcheck5, "ACCOUNT DELETED!", "wrong title:"+textcheck5);		
+		Account_deleted = new page.Account_deleted(driver);
+		Account_deleted.Continue();
     }
-    
-    @BeforeMethod
+	
+	@BeforeMethod
 	public void beforeMethod() {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\resources\\chromedriver_110\\chromedriver.exe");
         driver = new ChromeDriver();
@@ -41,7 +50,7 @@ public class ContactTest {
 	public void afterMethod() {
 		driver.close();
 	}
-
+	
 	public void closeGoogleAd()
     {
         if(driver.getCurrentUrl().contains("#google_vignette"))
@@ -60,5 +69,6 @@ public class ContactTest {
             driver.switchTo().defaultContent();
         }
     }
+
 
 }

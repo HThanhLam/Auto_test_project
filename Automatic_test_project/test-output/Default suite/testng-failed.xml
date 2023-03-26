@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="test.RegisterUserWithExistingEmail">
+      <class name="test.LoginUserWithCorrectEmailAndPassword">
         <methods>
-          <include name="TC5_registerUserWithExistingEmail"/>
-          <include name="beforeMethod"/>
           <include name="afterMethod"/>
+          <include name="TC2_loginUserSuccessful"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- test.RegisterUserWithExistingEmail -->
+      </class> <!-- test.LoginUserWithCorrectEmailAndPassword -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

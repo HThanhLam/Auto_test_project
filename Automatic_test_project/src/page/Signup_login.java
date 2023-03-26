@@ -3,6 +3,7 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class Signup_login {
 	WebDriver driver;
@@ -11,6 +12,12 @@ public class Signup_login {
 	By btnSignup = By.cssSelector("div.signup-form button");
 	By signUpTile = By.cssSelector("div[class='signup-form'] h2");	WebDriverWait Wait;
 	By errorSignUpMessage = By.cssSelector(".signup-form p");
+    By loginTile = By.cssSelector("div[class='login-form'] h2");
+    By loginEmailInput = By.xpath("//input[@data-qa='login-email']");
+    By loginPasswordInput = By.xpath("//input[@placeholder='Password']");
+    By loginButton = By.xpath("//button[normalize-space()='Login']");
+
+
 
 	public Signup_login(WebDriver driver) {
 		this.driver = driver;
@@ -22,14 +29,32 @@ public class Signup_login {
 		driver.findElement(btnSignup).click();
 	}
 	
+	public void signIn(String username,String email) {
+		driver.findElement(txtUsername).sendKeys(username);
+		driver.findElement(txtEmail).sendKeys(email);
+		driver.findElement(btnSignup).click();
+	}
+	
 	public String getSignUpTitle()
 	{
 		return driver.findElement(signUpTile).getText();
 	}
 	
+	public String getSignInTitle()
+	{
+		return driver.findElement(loginTile).getText();
+	}
+	
 	public String getErrorSignUpMessage()
     {
         return driver.findElement(errorSignUpMessage).getText();
+    }
+	
+	public void login(String email, String password)
+    {
+        driver.findElement(loginEmailInput).sendKeys(email);
+        driver.findElement(loginPasswordInput).sendKeys(password);
+        driver.findElement(loginButton).click();;
     }
 	
 }
