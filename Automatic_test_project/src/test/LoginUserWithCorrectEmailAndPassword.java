@@ -15,10 +15,9 @@ public class LoginUserWithCorrectEmailAndPassword {
 	Signup_login signup_login;
 	page.loggedin_Homepage loggedin_Homepage;
 	page.Account_deleted Account_deleted;
-	
+	   
     String email = "maiphuong@gmail.com";
     String password = "123456";
-	
 	
 	@Test
     public void TC2_loginUserSuccessful() throws InterruptedException {
