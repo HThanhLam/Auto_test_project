@@ -1,17 +1,11 @@
 package test;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.Assert;
 
 import page.*;
 
-public class RegisterUserWithExistingEmail {
-	WebDriver driver;
+public class RegisterUserWithExistingEmail extends BaseTest{
 	Homepage homepage;
 	Signup_login signup_login;
 	
@@ -25,27 +19,7 @@ public class RegisterUserWithExistingEmail {
         homepage.login();
         signup_login = new Signup_login(driver);
         Assert.assertTrue(signup_login.getSignUpTitle().contains("New User Signup!"),"Tilte Sign Up wrong");
-        signup_login.signup(registeredName,registeredEmailAddress);
+        signup_login.signup(registeredName, registeredEmailAddress);
         Assert.assertEquals(signup_login.getErrorSignUpMessage(),"Email Address already exist!");
     }
-	
-	@BeforeMethod
-	public void beforeMethod() {
-//		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\resources\\chromedriver_110\\chromedriver.exe");
-//        driver = new ChromeDriver();
-//        //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-//		//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//		driver.manage().window().maximize();
-//		driver.get("https://automationexercise.com/");
-        ChromeOptions option = new ChromeOptions();
-        option.addArguments("--remote-allow-origins=*");
-        driver = new ChromeDriver(option);
-		driver.get("https://automationexercise.com/");
-	}
-
-	@AfterMethod
-	public void afterMethod() {
-		driver.close();
-	}
-
 }
